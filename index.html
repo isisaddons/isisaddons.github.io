@@ -8,7 +8,7 @@ title: Home
 
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if not repo.forked and repo.name contains '-module=' %}
+        {% if repo.name contains '-module-' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
         {% endif %}
     {% endfor %}
@@ -17,7 +17,9 @@ title: Home
 <p>Wicket Viewer Extensions:</p>
 <ul>
     {% for repo in site.github.public_repositories %}
-        <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+        {% if repo.name contains '-wicket-' %}
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+        {% endif %}
     {% endfor %}
 </ul>
 
