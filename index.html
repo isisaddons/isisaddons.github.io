@@ -30,7 +30,7 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
-        {% unless repo.name contains '-module-' or repo.name contains '-wicket' %}
+        {% unless repo.name contains '-module-' or repo.name contains '-wicket' or repo.name == 'isisaddons.github.io' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endunless %}
         {% endif %}
