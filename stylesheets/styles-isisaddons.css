@@ -1,0 +1,13 @@
+a.site-logo {
+    float: left;
+}
+
+.site-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.clear {
+    clear: both;
+}
