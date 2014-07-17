@@ -5,10 +5,9 @@ title: Home
 
 
 <h3>Domain Modules:</h3>
-
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if repo.fork == true %}
+        {% if repo.fork == false %}
         {% if repo.name contains '-module-' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
@@ -19,8 +18,19 @@ title: Home
 <h3>Wicket Viewer Extensions:</h3>
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if repo.fork == true %}
+        {% if repo.fork == false %}
         {% if repo.name contains '-wicket-' %}
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
+        {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<h3>MetaModel (facet) Extensions:</h3>
+<ul>
+    {% for repo in site.github.public_repositories %}
+        {% if repo.fork == false %}
+        {% if repo.name contains '-facets-' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
         {% endif %}
