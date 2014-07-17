@@ -19,33 +19,41 @@ title: Home
 <p>Wicket Viewer Extensions:</p>
 <ul>
     {% for repo in site.github.public_repositories %}
+        {% unless repo.fork %}
             {% if repo.name contains '-wicket-' %}
                 <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
             {% endif %}
+        {% endunless %}
     {% endfor %}
 </ul>
 
 <p>MetaModel (Facet) extensions:</p>
 <ul>
     {% for repo in site.github.public_repositories %}
+        {% unless repo.fork %}
             {% if repo.name contains '-facets-' %}
                 <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
             {% endif %}
+        {% endunless %}
     {% endfor %}
 </ul>
 
 <p>Other:</p>
 <ul>
     {% for repo in site.github.public_repositories %}
-            {% unless repo.name contains -'module' or repo.name contains '-wicket-' or repo.name contains '-facets-' %}
+        {% unless repo.fork %}
+            {% unless repo.name contains '-module-' or repo.name contains '-wicket-' or repo.name contains '-facets-' %}
                 <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
             {% endunless  %}
+        {% endunless %}
     {% endfor %}
 </ul>
 
 Forked repos:
 <ul>
     {% for repo in site.github.public_repositories %}
+        {% if repo.fork %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
+        {% endif %}
     {% endfor %}
 </ul>
