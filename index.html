@@ -4,7 +4,7 @@ title: Home
 ---
 
 
-<p>Domain Modules:</p>
+<h3>Domain Modules:</h3>
 
 <ul>
     {% for repo in site.github.public_repositories %}
@@ -14,7 +14,7 @@ title: Home
     {% endfor %}
 </ul>
 
-<p>Wicket Viewer Extensions:</p>
+<h3>Wicket Viewer Extensions:</h3>
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.name contains '-wicket-' %}
@@ -24,10 +24,10 @@ title: Home
 </ul>
 
 
-Forked repos:
+<h3>Forked repos:</h3>
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if repo.forked == true %}
+        {% if repo.fork == true %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
     {% endfor %}
