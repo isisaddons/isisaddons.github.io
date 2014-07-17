@@ -27,6 +27,8 @@ title: Home
 Forked repos:
 <ul>
     {% for repo in site.github.public_repositories %}
-        <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+        {% if repo.forked %}
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+        {% endif %}
     {% endfor %}
 </ul>
