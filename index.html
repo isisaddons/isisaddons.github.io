@@ -41,11 +41,11 @@ title: Home
 <p>Other:</p>
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if repo.fork == false %}
+        {% unless repo.fork %}
             {% unless repo.name contains -'module' or repo.name contains '-wicket-' or repo.name contains '-facets-' %}
                 <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
             {% endunless  %}
-        {% endif %}
+        {% endunless %}
     {% endfor %}
 </ul>
 
