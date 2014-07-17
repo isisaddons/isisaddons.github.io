@@ -9,7 +9,7 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.name contains '-module-' %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
     {% endfor %}
 </ul>
@@ -18,7 +18,7 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.name contains '-wicket-' %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
     {% endfor %}
 </ul>
@@ -27,8 +27,8 @@ title: Home
 Forked repos:
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% if repo.forked %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li>
+        {% if repo.forked == true %}
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
     {% endfor %}
 </ul>
