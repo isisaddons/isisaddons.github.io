@@ -26,13 +26,13 @@ title: Home
     {% endfor %}
 </ul>
 
-<h3>MetaModel (facet) Extensions:</h3>
+<h3>Other:</h3>
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
-        {% if repo.name contains '-facets-' %}
+        {% unless repo.name contains '-module-' or repo.name contains '-wicket' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
-        {% endif %}
+        {% endunless %}
         {% endif %}
     {% endfor %}
 </ul>
