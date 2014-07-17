@@ -1,3 +1,23 @@
-markdown: redcarpet
-name: Isis Addons
-pygments: true
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Isis Addons
+tagline:          Additional components and modules to extend Apache Isis
+url:              http://www.isisaddons.org
+paginate:         1
+baseurl:          /
+author:
+  name:           Dan Haywood
+  url:            https://twitter.com/dkhaywood
+  email:          dan@haywood-associates.co.uk
+
+# Custom vars
+version:          1.0.0
+github:
+  repo:           https://github.com/isisaddons/isisaddons.github.io
+  
