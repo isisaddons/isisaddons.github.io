@@ -7,7 +7,7 @@ title: Home
 <h3>Domain Modules:</h3>
 <ul>
     {% for repo in site.github.public_repositories %}
-        {% unless repo.fork %}
+        {% unless repo.fork == true %}
             {% repo.name contains '-module-' %}
                 <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
             {% endif %}
