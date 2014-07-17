@@ -3,13 +3,9 @@ layout: default
 title: Home
 ---
 
-<script>
-var repos = {{ site.github.public_repositories | jsonify }};
-</script>
-
 <ul>
-{% for repo in repos %}
-  <li>{{ repo.name }}</li>
-{% endfor %}
+    {% for repo in site.github.public_repositories %}
+        <li>{{ repo.name }}</li>
+    {% endfor %}
 </ul>
 
