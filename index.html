@@ -1,56 +1,37 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Apache Isis Addons by isisaddons</title>
+---
+layout: default
+title: Home
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div class="wrapper">
-    <header>
-        <h1>Apache Isis Addons</h1>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-        <p>Additional components and modules to extend Apache Isis</p>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-
-        <p class="view"><a href="https://github.com/isisaddons">View My GitHub Profile</a></p>
-
-    </header>
-    <section>
-        <h3>
-            <a name="welcome-to-apache-isis-addons" class="anchor" href="#welcome-to-apache-isis-addons"><span
-                    class="octicon octicon-link"></span></a>Welcome to Apache Isis Addons.</h3>
-
-        <p>
-            page.title: {{ page.title }}
-        </p>
-
-        <p>
-            site.name: {{ site.name}}
-
-        </p>
-
-    </section>
-    <footer>
-        <p>
-            <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
-            </small>
-        </p>
-    </footer>
+    {{ post.content }}
+  </div>
+  {% endfor %}
 </div>
-<script src="javascripts/scale.fix.js"></script>
 
-<script type="text/javascript">
-
-
-</script>
-
-</body>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
