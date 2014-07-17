@@ -5,36 +5,19 @@
 
 <body>
 <div class="wrapper">
-    <header>
-        <h1>Apache Isis Addons</h1>
 
-        <p>Additional components and modules to extend Apache Isis</p>
+    {% include body-header.html %}
 
-
-        <p class="view"><a href="https://github.com/isisaddons">View My GitHub Profile</a></p>
-
-    </header>
     <section>
         <h3>
             <a name="welcome-to-apache-isis-addons" class="anchor" href="#welcome-to-apache-isis-addons"><span
-                    class="octicon octicon-link"></span></a>Welcome to Apache Isis Addons.</h3>
+                    class="octicon octicon-link"></span></a>Welcome to {{ site.title }}.</h3>
 
-        <p>
-            page.title: {{ page.title }}
-        </p>
-
-        <p>
-            site.title: {{ site.title}}
-
-        </p>
 
     </section>
-    <footer>
-        <p>
-            <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
-            </small>
-        </p>
-    </footer>
+
+    {% include body-footer.html %}
+
 </div>
 <script src="javascripts/scale.fix.js"></script>
 
