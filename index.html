@@ -8,7 +8,7 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
-        {% if repo.name contains '-module-' %}
+        {% if repo.name contains '-module-' and not repo.name contains '-example-' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
         {% endif %}
         {% endif %}
