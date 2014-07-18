@@ -12,9 +12,9 @@ title: Home
         {% unless repo.name contains '-example' %}
             
             
-            {% for repo_example in site.github.public_repositories %}
-                {% if repo_example.name contains repo.name and repo_example.name contains '-example' %}
-                    hooray!
+            {% for candidate_repo in site.github.public_repositories %}
+                {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
+                    {% assign repo_example = candidate_repo }}
                 {% endif %}
             {% endfor %}
             
