@@ -121,12 +121,13 @@ header ul {
   width:270px;
 }
 
-header li {
+/*header li {
   width:89px;
   float:left;
   border-right:1px solid #d2d2d2;
   height:40px;
 }
+*/
 
 header ul a {
   line-height:1;
