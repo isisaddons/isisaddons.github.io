@@ -9,9 +9,7 @@ title: Home
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
         {% if repo.name contains '-module-' %}
-        {% unless repo.name contains '-example' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
-        {% endunless %}
         {% endif %}
         {% endif %}
     {% endfor %}
