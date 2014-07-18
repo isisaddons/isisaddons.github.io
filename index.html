@@ -12,7 +12,6 @@ title: Home
         {% unless repo.name contains '-example' %}
             
             
-            {% capture repo_example %}{% repo.name | append '-example' %}{% endcapture %}
             
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a> ( {{ repo_example}} )
 
