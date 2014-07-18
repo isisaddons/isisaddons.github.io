@@ -12,3 +12,7 @@ a.site-logo {
 .clear {
     clear: both;
 }
+
+section.repos {
+    float: left;
+}
