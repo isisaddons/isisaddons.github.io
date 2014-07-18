@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            Apache Isis Addons
-tagline:          Additional components and modules to extend Apache Isis
+tagline:          Modules, plugins and add-ons to extend the capabilities of Apache Isis.
 url:              http://www.isisaddons.org
 paginate:         1
 baseurl:          /
