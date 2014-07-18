@@ -101,6 +101,7 @@ header {
   position:fixed;
 }
 
+/*
 header ul {
   list-style:none;
   height:40px;
@@ -120,6 +121,7 @@ header ul {
   box-shadow:inset #fff 0 1px 0, inset rgba(0,0,0,0.03) 0 -1px 0;
   width:270px;
 }
+*/
 
 /*header li {
   width:89px;
