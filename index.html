@@ -6,7 +6,7 @@ title: Home
 <p>
     This site catalogs a number of add-ons to <a href="http://isis.apache.org"></a> Apache Isis for you to use
     either "out of the box", or as a starting point to modify and adapt
-    to your own requirements.
+    to your own requirements.  All add-ons live in the <code>org.isisaddons</code> package.
 </p>
 
 <p>Each add-on is hosted in its own github repo, named as follows:
@@ -14,10 +14,13 @@ title: Home
 
 <ul>
     <li><code>isis-module-xxx</code> : a domain object &quot;module&quot; that implements business logic for a
-        particular subdomain, eg application settings, or tags (labels)
+        particular subdomain, eg application settings, or tags (labels).  Module add-ons live in the
+        <code>org.isisaddons.module</code> package.</li>
     </li>
-    <li><code>isis-wicket-yyy</code> : an extension to Isis' Wicket viewer, eg for rendering calendars or maps</li>
-    <li><code>isis-facets-zzz</code> : an extension to Isis' metamodel, eg new annotations or programming conventions.
+    <li><code>isis-wicket-yyy</code> : an extension to Isis' Wicket viewer, eg for rendering calendars or maps.
+        Wicket add-ons live in the <code>org.isisaddons.wicket</code> package.</li>
+    <li><code>isis-metamodel-zzz</code> : an extension to Isis' metamodel, eg new annotations or programming
+        conventions.  Metamodel add-ons live in the <code>org.isisaddons.metamodel</code> package.
     </li>
 </ul>
 
@@ -26,6 +29,11 @@ title: Home
     try out the add-on to see if it fits your requirements.
 </p>
 
+<p>
+    There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
+    the above package requirements, but which may nevertheless be of interest to developers building apps with
+    Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience/discoverability.
+</p>
 <h3>Domain Modules</h3>
 <p>
     In the case of the <code>isis-module-xxx</code> addons, these typically have the following structure:
@@ -38,8 +46,7 @@ title: Home
 
 <p>
     Only the <code>dom</code> module is released into <a href="http://search.maven.org">Maven central repo</a>; this is
-    all that
-    is required if you have no need to customize the functionality.
+    all that is required if you have no need to customize the functionality.
 </p>
 
 <p>
