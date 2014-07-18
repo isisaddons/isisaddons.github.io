@@ -12,16 +12,13 @@ title: Home
         {% unless repo.name contains '-example' %}
             
             
-            {% capture repo_example %}{{ repo.name | append '-example' }}{% endcapture %}
-
             {% for repo_example in site.github.public_repositories %}
                 {% if repo_example.name contains repo.name and repo_example.name contains '-example' %}
-                    {% assign repo_example_name = repo_example.name %}
+                    hooray!
                 {% endif %}
             {% endfor %}
             
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a> 
-            ( {{ repo_example_name }} )
 
             
         {% endunless %}
