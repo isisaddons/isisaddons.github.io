@@ -8,9 +8,8 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
-            {% if repo.name contains '-module-' %}
+            {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
                 {% unless repo.name contains '-example' %}
-            
             
                     <li>
                         <a href="{{repo.html_url}}">{{ repo.name }}</a>
@@ -24,7 +23,6 @@ title: Home
                         {% if repo_example %}
                             &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
                         {% endif %}
-
                     </li> 
             
                 {% endunless %}
@@ -37,23 +35,29 @@ title: Home
 <ul>
     {% for repo in site.github.public_repositories %}
         {% if repo.fork == false %}
-        {% if repo.name contains '-wicket-' %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
-        {% endif %}
+            {% if repo.name contains '-wicket-' %}
+                {% unless repo.name contains '-example' %}
+            
+                    <li>
+                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+
+                        {% for candidate_repo in site.github.public_repositories %}
+                            {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
+                                {% assign repo_example = candidate_repo %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if repo_example %}
+                            &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
+                        {% endif %}
+                    </li> 
+            
+                {% endunless %}
+            {% endif %}
         {% endif %}
     {% endfor %}
 </ul>
 
-<h3>Other:</h3>
-<ul>
-    {% for repo in site.github.public_repositories %}
-        {% if repo.fork == false %}
-        {% unless repo.name contains '-module-' or repo.name contains '-wicket' or repo.name == 'isisaddons.github.io' %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
-        {% endunless %}
-        {% endif %}
-    {% endfor %}
-</ul>
 
 
 <h3>Forked repos:</h3>
