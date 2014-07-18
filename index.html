@@ -11,7 +11,7 @@ title: Home
         {% if repo.name contains '-module-' %}
         {% unless repo.name contains '-example' %}
             {% assign repo_example = repo.name + '-example' %}
-            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
+            <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a> ( {{ repo_example}} )
             
         {% endunless %}
         {% endif %}
