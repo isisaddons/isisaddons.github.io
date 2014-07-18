@@ -260,3 +260,26 @@ footer {
     color:#444;
   }
 }
+
+
+
+/*** additional tweaks ***/
+
+a.site-logo {
+    float: left;
+    padding-right: 10px;
+}
+
+.site-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.clear {
+    clear: both;
+}
+
+section.repos {
+    float: left;
+}

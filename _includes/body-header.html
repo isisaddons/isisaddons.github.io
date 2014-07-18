@@ -34,7 +34,7 @@
                     {% endfor %}
 
                     {% if repo_example %}
-                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
+                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ example }}</a>)
                     {% endif %}
                 </li>
 
@@ -63,7 +63,7 @@
                     {% endfor %}
 
                     {% if repo_example %}
-                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
+                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ example }}</a>)
                     {% endif %}
                 </li>
 
@@ -79,7 +79,7 @@
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == true %}
-                <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a>
+                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
