@@ -3,6 +3,34 @@ layout: default
 title: Home
 ---
 
+<h3>About this site</h3>
+
+This site catalogs a number of add-ons to Apache Isis for you to use 
+either "out of the box", or for you to use a starting point to modify and adapt
+to your own requirements.
+
+Each add-ons is hosted in its own github repo, named as follows:
+
+* isis-module-xxx : a domain object `module` which is provides business logic for a particular subdomain
+* isis-wicket-yyy : an extension to Isis' wicket viewer, eg for rendering calendars or maps
+* isis-facets-zzz : an extension to Isis' metamodel, eg new annotations or programming conventions.
+
+Some add-ons provide a companion `-example` repo.  These allow you to quickly 
+try out the add-on to see if it fits your requirements.
+
+In the case of the `isis-module-xxx` addons, these typically have the following structure:
+* `dom` - domain object module
+* `fixture` - fixtures
+* `integtests` - integration tests
+
+Only the `dom` module is released into Maven central repo; this is all that 
+is required if you have no need to customize the functionality.
+
+If you do need to modify/adapt the provided functionality, then fork the entire repo; this
+way you also have fixtures and integration tests to ensure that your changes are properly tested.
+And, if you think others would benefit from your changes, please consider raising a pull request
+to fold those changes back into the original.
+
 
 <h3>Domain Modules:</h3>
 <ul>
