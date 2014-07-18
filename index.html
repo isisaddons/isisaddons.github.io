@@ -10,7 +10,9 @@ title: Home
         {% if repo.fork == false %}
             {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
                 {% unless repo.name contains '-example' %}
-            
+
+                    {% assign repo_example = false %}
+                
                     <li>
                         <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
@@ -38,6 +40,8 @@ title: Home
             {% if repo.name contains '-wicket-' %}
                 {% unless repo.name contains '-example' %}
             
+                    {% assign repo_example = false %}
+
                     <li>
                         <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
