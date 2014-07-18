@@ -6,7 +6,7 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            Apache Isis Addons
+title:            Apache Isis Add-ons
 tagline:          Modules, plugins and add-ons to extend the capabilities of Apache Isis.
 url:              http://www.isisaddons.org
 paginate:         1
