@@ -14,7 +14,7 @@ title: Home
             
             {% for candidate_repo in site.github.public_repositories %}
                 {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
-                    {% assign repo_example = candidate_repo }}
+                    {% assign repo_example = candidate_repo %}
                 {% endif %}
             {% endfor %}
             
