@@ -10,8 +10,9 @@ title: Home
         {% if repo.fork == false %}
         {% if repo.name contains '-module-' %}
         {% unless repo.name contains '-example' %}
-            {% assign repo_example = repo.name + '-example' %}
+            {% assign repo_example = repo.name | append '-example' %}
             <li><a href="{{repo.html_url}}">{{ repo.name }}</li></a> ( {{ repo_example}} )
+
             
         {% endunless %}
         {% endif %}
