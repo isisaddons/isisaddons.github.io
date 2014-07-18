@@ -5,31 +5,46 @@ title: Home
 
 <h3>About this site</h3>
 
-This site catalogs a number of add-ons to Apache Isis for you to use 
+<p>
+This site catalogs a number of add-ons to Apache Isis for you to use
 either "out of the box", or for you to use a starting point to modify and adapt
 to your own requirements.
+</p>
 
-Each add-ons is hosted in its own github repo, named as follows:
+<p>Each add-ons is hosted in its own github repo, named as follows:
+</p>
 
-* isis-module-xxx : a domain object `module` which is provides business logic for a particular subdomain
-* isis-wicket-yyy : an extension to Isis' wicket viewer, eg for rendering calendars or maps
-* isis-facets-zzz : an extension to Isis' metamodel, eg new annotations or programming conventions.
+<ul>
+    <li> <code>isis-module-xxx</code> : a domain object `module` which is provides business logic for a particular subdomain </li>
+    <li> <code>isis-wicket-yyy</code> : an extension to Isis' wicket viewer, eg for rendering calendars or maps </li>
+    <li> <code>isis-facets-zzz</code> : an extension to Isis' metamodel, eg new annotations or programming conventions. </li>
+</ul>
 
-Some add-ons provide a companion `-example` repo.  These allow you to quickly 
+<p>
+Some add-ons provide a companion <code>-example</code> repo.  These allow you to quickly
 try out the add-on to see if it fits your requirements.
+</p>
 
-In the case of the `isis-module-xxx` addons, these typically have the following structure:
-* `dom` - domain object module
-* `fixture` - fixtures
-* `integtests` - integration tests
+<p>
+In the case of the <code>isis-module-xxx</code> addons, these typically have the following structure:
+</p>
+<ul>
+    <li><code>dom</code> - domain object module </li>
+    <li><code>fixture</code> - fixtures </li>
+    <li><code>integtests</code> - integration tests </li>
+</ul>
 
-Only the `dom` module is released into Maven central repo; this is all that 
+<p>
+Only the <code>dom</code> module is released into  <a href="http://search.maven.org">Maven central repo</a>; this is all that
 is required if you have no need to customize the functionality.
+</p>
 
+<p>
 If you do need to modify/adapt the provided functionality, then fork the entire repo; this
 way you also have fixtures and integration tests to ensure that your changes are properly tested.
 And, if you think others would benefit from your changes, please consider raising a pull request
 to fold those changes back into the original.
+</p>
 
 
 <h3>Domain Modules:</h3>
@@ -40,7 +55,7 @@ to fold those changes back into the original.
                 {% unless repo.name contains '-example' %}
 
                     {% assign repo_example = false %}
-                
+
                     <li>
                         <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
@@ -53,8 +68,8 @@ to fold those changes back into the original.
                         {% if repo_example %}
                             &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
                         {% endif %}
-                    </li> 
-            
+                    </li>
+
                 {% endunless %}
             {% endif %}
         {% endif %}
@@ -67,7 +82,7 @@ to fold those changes back into the original.
         {% if repo.fork == false %}
             {% if repo.name contains '-wicket-' %}
                 {% unless repo.name contains '-example' %}
-            
+
                     {% assign repo_example = false %}
 
                     <li>
@@ -82,8 +97,8 @@ to fold those changes back into the original.
                         {% if repo_example %}
                             &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">{{ repo_example.name }}</a>)
                         {% endif %}
-                    </li> 
-            
+                    </li>
+
                 {% endunless %}
             {% endif %}
         {% endif %}
