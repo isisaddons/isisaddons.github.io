@@ -26,8 +26,46 @@
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
+
+                    {% for candidate_repo in site.github.public_repositories %}
+                    {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
+                    {% assign repo_example = candidate_repo %}
+                    {% endif %}
+                    {% endfor %}
+
+                    {% if repo.name contains 'isis-module-audit' %}
+                    &nbsp;&nbsp;(currently empty)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-command' %}
+                    &nbsp;&nbsp;(currently empty)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-devutils' %}
+                    &nbsp;&nbsp;(currently empty)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-docx' %}
+                    &nbsp;&nbsp;(REFACTORED!)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-excel' %}
+                    &nbsp;&nbsp;(out of date)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-publishing' %}
+                    &nbsp;&nbsp;(currently empty)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-scheduler' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-settings' %}
+                    &nbsp;&nbsp;(currently empty)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-stringinterpolator' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-tags' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
                 </li>
 
+                    
                 {% endunless %}
                 {% endif %}
                 {% endif %}
@@ -45,13 +83,33 @@
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
+
+                    {% if repo.name contains 'isis-wicket-excel' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-wicket-fullcalendar2' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-wicket-gmap3' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-wicket-wickedcharts' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+                    {% if repo.name contains 'isis-wicket-wizard' %}
+                    &nbsp;&nbsp;(to refactor)
+                    {% endif %}
+
                 </li>
 
+                
                 {% endunless %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
             </ul>
+
+
 
             <h3>Forked repos:</h3>
             <ul>
