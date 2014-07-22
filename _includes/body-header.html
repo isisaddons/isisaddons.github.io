@@ -26,16 +26,6 @@
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
-
-                    {% for candidate_repo in site.github.public_repositories %}
-                    {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
-                    {% assign repo_example = candidate_repo %}
-                    {% endif %}
-                    {% endfor %}
-
-                    {% if repo_example %}
-                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">example</a>)
-                    {% endif %}
                 </li>
 
                 {% endunless %}
@@ -55,16 +45,6 @@
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
-
-                    {% for candidate_repo in site.github.public_repositories %}
-                    {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
-                    {% assign repo_example = candidate_repo %}
-                    {% endif %}
-                    {% endfor %}
-
-                    {% if repo_example %}
-                    &nbsp;&nbsp;(<a href="{{repo_example.html_url}}">example</a>)
-                    {% endif %}
                 </li>
 
                 {% endunless %}
@@ -72,8 +52,6 @@
                 {% endif %}
                 {% endfor %}
             </ul>
-
-
 
             <h3>Forked repos:</h3>
             <ul>
