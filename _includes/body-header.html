@@ -20,18 +20,10 @@
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
-                {% unless repo.name contains '-example' %}
-
-                {% assign repo_example = false %}
+                {% unless repo.name contains '-audit' or repo.name contains '-command' or repo.name contains '-devutils' or repo.name contains '-publishing' or repo.name contains '-settings'  %}
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
-
-                    {% for candidate_repo in site.github.public_repositories %}
-                    {% if candidate_repo.name contains repo.name and candidate_repo.name contains '-example' %}
-                    {% assign repo_example = candidate_repo %}
-                    {% endif %}
-                    {% endfor %}
 
                     {% if repo.name contains 'isis-module-audit' %}
                     &nbsp;&nbsp;(to do)
@@ -43,10 +35,10 @@
                     &nbsp;&nbsp;(to do)
                     {% endif %}
                     {% if repo.name contains 'isis-module-docx' %}
-                    &nbsp;&nbsp;(REFACTORED!)
+                    &nbsp;&nbsp;
                     {% endif %}
                     {% if repo.name contains 'isis-module-excel' %}
-                    &nbsp;&nbsp;(out of date)
+                    &nbsp;&nbsp;(to refactor)
                     {% endif %}
                     {% if repo.name contains 'isis-module-publishing' %}
                     &nbsp;&nbsp;(to do)
@@ -77,7 +69,6 @@
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-wicket-' %}
-                {% unless repo.name contains '-example' %}
 
                 {% assign repo_example = false %}
 
@@ -103,7 +94,6 @@
                 </li>
 
                 
-                {% endunless %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
