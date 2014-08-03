@@ -20,14 +20,11 @@
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
-                {% unless repo.name contains '-audit' or repo.name contains '-command' or repo.name contains '-devutils' or repo.name contains '-publishing' or repo.name contains '-settings'  %}
+                {% unless repo.name contains '-command' or repo.name contains '-devutils' or repo.name contains '-publishing' or repo.name contains '-settings'  %}
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
-                    {% if repo.name contains 'isis-module-audit' %}
-                    &nbsp;&nbsp;(to do)
-                    {% endif %}
                     {% if repo.name contains 'isis-module-command' %}
                     &nbsp;&nbsp;(to do)
                     {% endif %}
