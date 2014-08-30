@@ -20,7 +20,7 @@
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
-                {% unless repo.name contains '-devutils' or repo.name contains '-security' or repo.name contains '-publishing' or repo.name contains '-settings'  %}
+                {% unless repo.name contains 'XXX' %}
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
@@ -29,25 +29,31 @@
                     &nbsp;&nbsp;(to release)
                     {% endif %}
                     {% if repo.name contains 'isis-module-devutils' %}
-                    &nbsp;&nbsp;(to do)
+                    &nbsp;&nbsp;(wip)
                     {% endif %}
                     {% if repo.name contains 'isis-module-excel' %}
-                    &nbsp;&nbsp;(to refactor)
+                    &nbsp;&nbsp;(wip)
                     {% endif %}
                     {% if repo.name contains 'isis-module-publishing' %}
-                    &nbsp;&nbsp;(to do)
+                    &nbsp;&nbsp;(wip)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-publishingevent' %}
+                    &nbsp;&nbsp;(wip)
                     {% endif %}
                     {% if repo.name contains 'isis-module-scheduler' %}
-                    &nbsp;&nbsp;(to refactor)
+                    &nbsp;&nbsp;(wip)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-security' %}
+                    &nbsp;&nbsp;(wip)
+                    {% endif %}
+                    {% if repo.name contains 'isis-module-settings' %}
+                    &nbsp;&nbsp;(wip)
                     {% endif %}
                     {% if repo.name contains 'isis-module-stringinterpolator' %}
                     &nbsp;&nbsp;(to release)
                     {% endif %}
                     {% if repo.name contains 'isis-module-tags' %}
                     &nbsp;&nbsp;(to release)
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-settings' %}
-                    &nbsp;&nbsp;(to do)
                     {% endif %}
                 </li>
 
