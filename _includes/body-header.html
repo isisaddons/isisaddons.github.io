@@ -25,9 +25,6 @@
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
-                    {% if repo.name contains 'isis-module-audit' %}
-                    &nbsp;&nbsp;(wip)
-                    {% endif %}
                     {% if repo.name contains 'isis-module-devutils' %}
                     &nbsp;&nbsp;(wip)
                     {% endif %}
@@ -42,9 +39,6 @@
                     {% endif %}
                     {% if repo.name contains 'isis-module-scheduler' %}
                     &nbsp;&nbsp;(wip)
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-security' %}
-                    &nbsp;&nbsp;
                     {% endif %}
                     {% if repo.name contains 'isis-module-settings' %}
                     &nbsp;&nbsp;(wip)
