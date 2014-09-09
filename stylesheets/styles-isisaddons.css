@@ -2,6 +2,10 @@ h3 {
   margin:0 0 5px;
 }
 
+.home ul {
+  margin-top: -10px;
+}
+
 .WIP {
   font-size: smaller;
   color: red;
