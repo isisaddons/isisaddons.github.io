@@ -4,7 +4,7 @@ title: Home
 ---
 
 <p>
-    This site catalogs a number of add-ons to <a href="http://isis.apache.org"></a> Apache Isis for you to use
+    This site catalogs a number of add-ons to <a href="http://isis.apache.org">Apache Isis</a> for you to use
     either "out of the box", or as a starting point to modify and adapt
     to your own requirements.  All add-ons live in the <code>org.isisaddons</code> package.
 </p>
@@ -17,34 +17,40 @@ title: Home
         particular subdomain, eg application settings, or tags (labels).</li>
     </li>
     <li><code>isis-wicket-yyy</code> : an extension to Isis' Wicket viewer, eg for rendering calendars or maps.</li>
-    <li><code>isis-metamodel-zzz</code> : an extension to Isis' metamodel, eg new annotations or programming
-        conventions.
-    </li>
 </ul>
 <p>
     There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
     the above package requirements, but which may nevertheless be of interest to developers building apps with
     Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
 </p>
-<h3>Domain Modules</h3>
+<h3>Structure</h3>
 <p>
-    In the case of the <code>isis-module-xxx</code> addons, these typically have the following structure:
+    All repos follow a standard structure.  In the case of the <code>isis-module-xxx</code> add-ons, these have the 
+    following structure:
 </p>
 <ul>
-    <li><code>dom</code> - domain object module</li>
+    <li><code>dom</code> - domain object module (released) </li>
     <li><code>fixture</code> - fixtures</li>
     <li><code>integtests</code> - integration tests</li>
     <li><code>webapp</code> - webapp to run</li>
 </ul>
+<p>
+    In the case of the <code>isis-wicket-xxx</code> add-ons, the structure is:
+</p>
+<ul>
+    <li><code>lib</code> - library module (released) </li>
+    <li><code>fixture</code> - fixtures</li>
+    <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
+</ul>
 
 <p>
-    Only the <code>dom</code> module is released into <a href="http://search.maven.org">Maven central repo</a>; this is
-    all that is required if you have no need to customize the functionality.
+    Only the <code>dom</code> (for module add-ons) or <code>lib</code> (for wicket add-ons)is released into 
+    <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no need to customize the functionality.
 </p>
 
 <p>
     If you do need to modify/adapt the provided functionality, then fork the entire repo; this
-    way you also have fixtures and integration tests to ensure that your changes are properly tested.
+    way you also have fixtures and tests to ensure that your changes are properly tested.
     And, if you think others would benefit from your changes, please consider raising a pull request
     to fold those changes back into the original.
 </p>
@@ -53,6 +59,6 @@ title: Home
 <h3>READMEs</h3>
 <p>
     Each add-on has its own <code>README</code>; use that to learn more about the features provided by the add-on and how to
-    install/configure the add-on.
+    install/configure the add-on.  Some add-ons also have wiki pages (linked from the <code>README</code>).
 </p>
 

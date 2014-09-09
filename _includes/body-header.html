@@ -11,40 +11,40 @@
         
         <p class="site-tagline"> {{ site.tagline }}</p>
 
-        <p class="view"><a href="{{ site.github.owner_url }}">View on GitHub</a></p>
-
         <div class="repos">
+
+        <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
 
             <h3>Domain Modules:</h3>
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
-                {% if repo.name contains '-module-' or repo.name contains '-domainservice-' %}
+                {% if repo.name contains '-module-' %}
                 {% unless repo.name contains 'XXX' %}
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
                     {% if repo.name contains 'isis-module-devutils' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-excel' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-publishing' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-scheduler' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-settings' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-stringinterpolator' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-module-tags' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                 </li>
 
@@ -67,19 +67,19 @@
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
                     {% if repo.name contains 'isis-wicket-excel' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-fullcalendar2' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-gmap3' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-wickedcharts' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-wizard' %}
-                    &nbsp;&nbsp;(wip)
+                    &nbsp;&nbsp;(WIP)
                     {% endif %}
 
                 </li>
@@ -89,8 +89,6 @@
                 {% endif %}
                 {% endfor %}
             </ul>
-
-
 
             <h3>Forked repos:</h3>
             <ul>
