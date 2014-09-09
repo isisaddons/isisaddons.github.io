@@ -13,8 +13,6 @@
 
         <div class="repos">
 
-        <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
-
             <h3>Domain Modules:</h3>
             <ul>
                 {% for repo in site.github.public_repositories %}
@@ -26,25 +24,25 @@
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
                     {% if repo.name contains 'isis-module-devutils' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-excel' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-publishing' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-scheduler' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-settings' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-stringinterpolator' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-module-tags' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                 </li>
 
@@ -67,19 +65,19 @@
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
 
                     {% if repo.name contains 'isis-wicket-excel' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-fullcalendar2' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-gmap3' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-wickedcharts' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
                     {% if repo.name contains 'isis-wicket-wizard' %}
-                    &nbsp;&nbsp;(WIP)
+                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
                     {% endif %}
 
                 </li>
@@ -98,6 +96,8 @@
                 {% endif %}
                 {% endfor %}
             </ul>
+
+            <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
 
         </div>
 
