@@ -48,28 +48,6 @@
                 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
-
-                    {% if repo.name contains 'isis-module-devutils' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-excel' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-publishing' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-scheduler' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-settings' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-stringinterpolator' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-module-tags' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
                 </li>
 
                     
@@ -80,36 +58,21 @@
                 {% endfor %}
             </ul>
 
-            <h3>Wicket Viewer Extensions:</h3>
+            <h3>Wicket Viewer Extensions: <span class="WIP">(WIP)</span></h3>
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-wicket-' %}
 
+                {% if repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+
                 {% assign repo_example = false %}
 
                 <li>
                     <a href="{{repo.html_url}}">{{ repo.name }}</a>
-
-                    {% if repo.name contains 'isis-wicket-excel' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-wicket-fullcalendar2' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-wicket-gmap3' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-wicket-wickedcharts' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-                    {% if repo.name contains 'isis-wicket-wizard' %}
-                    &nbsp;&nbsp;<span class="WIP">(WIP)</span>
-                    {% endif %}
-
                 </li>
-
                 
+                {% endif %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
