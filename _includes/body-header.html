@@ -19,7 +19,7 @@
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' %}
                 
-                {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' or repo.name contains 'stringinterpolator' or repo.name contains 'tags' %}
+                {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' or repo.name contains 'stringinterpolator'  %}
 
                 {% unless repo.name contains 'XXX' %}
 
@@ -41,7 +41,7 @@
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' %}
                 
-                {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' or repo.name contains 'stringinterpolator' or repo.name contains 'tags' %}
+                {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' or repo.name contains 'stringinterpolator' %}
                 
                 {% unless repo.name contains 'XXX' %}
 
@@ -57,6 +57,28 @@
                 {% endif %}
                 {% endfor %}
             </ul>
+
+            <!--
+            <h3>Wicket Viewer Extensions:</span></h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-wicket-' %}
+
+                {% unless repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+
+                {% assign repo_example = false %}
+
+                <li>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                </li>
+                
+                {% endunless %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+            -->
 
             <h3>Wicket Viewer Extensions: <span class="WIP">(WIP)</span></h3>
             <ul>
