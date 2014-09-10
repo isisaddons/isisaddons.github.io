@@ -5,6 +5,9 @@ h3 {
 .home ul {
   margin-top: -10px;
   padding-left: 20px;
+}
+
+.home ul li {
   padding-bottom: 10px;
 }
 

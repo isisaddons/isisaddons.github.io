@@ -58,13 +58,13 @@ title: Home
             </ul>
 
             <!--
-            <h3>Wicket Viewer Extensions:</span></h3>
+            <h3>Wicket Viewer Components:</span></h3>
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-wicket-' %}
 
-                {% unless repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+                {% unless repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
 
                 {% assign repo_example = false %}
 
@@ -79,13 +79,13 @@ title: Home
             </ul>
             -->
 
-            <h3>Wicket Viewer Extensions: <span class="WIP">(WIP)</span></h3>
+            <h3>Wicket Viewer Components: <span class="WIP">(WIP)</span></h3>
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-wicket-' %}
 
-                {% if repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+                {% if repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
 
                 {% assign repo_example = false %}
 
@@ -105,10 +105,9 @@ title: Home
         </div>
 
         <div class="home">
-            <h3>Forking the Repos</h3>
+            <h3>Repo Structure</h3>
             <p>
-                All repos follow a standard structure.  In the case of the <code>isis-module-xxx</code> add-ons, these have the 
-                following structure:
+                The <code>isis-module-xxx</code> add-ons have the following structure:
             </p>
             <ul>
                 <li><code>dom</code> - domain object module</li>
@@ -117,22 +116,27 @@ title: Home
                 <li><code>webapp</code> - webapp to run</li>
             </ul>
             <p>
-                In the case of the <code>isis-wicket-xxx</code> add-ons, the structure is:
+                The <code>isis-wicket-xxx</code> add-ons have the structure:
             </p>
             <ul>
                 <li><code>cpt</code> - component module</li>
                 <li><code>fixture</code> - fixtures</li>
                 <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
             </ul>
-
+            
+            <h3>Use "Out-of-the-box"</h3>
             <p>
-                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons)is released into 
-                <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no need to customize the functionality.
+                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons) is released into 
+                <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no 
+                need to customize the functionality.
             </p>
-
+            
+            <h3>Forking the Repos</h3>
             <p>
-                If you do need to modify/adapt the provided functionality, then fork the entire repo; this
-                way you also have fixtures and tests to ensure that your changes are properly tested.
+                Alternatively, if you do need to modify/adapt the provided functionality, then fork the entire repo.
+                This way you also have fixtures and tests to ensure that your changes are properly tested.
+            </p>
+            <p>
                 And, if you think others would benefit from your changes, please consider raising a pull request
                 to fold those changes back into the original.
             </p>
