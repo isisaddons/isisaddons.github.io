@@ -17,7 +17,6 @@ title: Home
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,9 +36,6 @@ title: Home
                         <td>
                             {{repo.description}}
                         </td>
-                        <td>
-                            OK
-                        </td>
                     </tr>
                     
                     {% endunless %}
@@ -58,13 +54,12 @@ title: Home
 
                     <tr>
                         <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a> 
+                            <br/>
+                            <span class="WIP">WIP</span>
                         </td>
                         <td>
                             {{repo.description}}
-                        </td>
-                        <td class="WIP">
-                            WIP
                         </td>
                     </tr>
                     
@@ -86,14 +81,14 @@ title: Home
                     <tr>
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                            <br/>
+                            <span class="WIP">WIP</span>
                         </td>
                         <td>
                             {{repo.description}}
                         </td>
-                        <td class="WIP">
-                            WIP
-                        </td>
-                    </tr>
+
+                        </tr>
                     
                     {% endif %}
                     {% endif %}
