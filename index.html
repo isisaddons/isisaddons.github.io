@@ -13,29 +13,43 @@ title: Home
             </p>
 
             <h3>Domain Modules:</h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-module-' %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
                 
-                {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings'  %}
-
-                {% unless repo.name contains 'XXX' %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
-                </li>
-
+                    {% for repo in site.github.public_repositories %}
+                    {% if repo.fork == false %}
+                    {% if repo.name contains '-module-' %}
                     
-                {% endunless %}
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
+                    {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings'  %}
 
-            <h3>Domain Modules: <span class="WIP">(WIP)</span></h3>
-            <ul>
+                    {% unless repo.name contains 'XXX' %}
+
+                    <tr>
+                        <td>
+                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                        </td>
+                        <td>{{repo.description}}
+                        </td>
+                        <td>
+                            OK
+                        </td>
+                    </tr>
+                    
+                    {% endunless %}
+                    {% endunless %}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' %}
