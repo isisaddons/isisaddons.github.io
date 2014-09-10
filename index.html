@@ -12,7 +12,6 @@ title: Home
                 to your own requirements.  Each add-on has its own repo.  All add-ons use the <code>org.isisaddons</code> package.
             </p>
 
-            <h3>Domain Modules:</h3>
             <table>
                 <thead>
                     <tr>
@@ -47,29 +46,59 @@ title: Home
                     {% endif %}
                     {% endif %}
                     {% endfor %}
-                </tbody>
-            </table>
 
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-module-' %}
-                
-                {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' %}
-                
-                {% unless repo.name contains 'XXX' %}
+                    {% for repo in site.github.public_repositories %}
+                    {% if repo.fork == false %}
+                    {% if repo.name contains '-module-' %}
+                    
+                    {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' %}
+                    
+                    {% unless repo.name contains 'XXX' %}
 
-                
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
-                </li>
+                    <tr>
+                        <td>
+                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                        </td>
+                        <td>{{repo.description}}
+                        </td>
+                        <td class="WIP">
+                            WIP
+                        </td>
+                    </tr>
+                    
+                    {% endunless %}
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
 
                     
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
+                    {% for repo in site.github.public_repositories %}
+                    {% if repo.fork == false %}
+                    {% if repo.name contains '-wicket-' %}
+
+                    {% if repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+
+                    {% assign repo_example = false %}
+
+                    <tr>
+                        <td>
+                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                        </td>
+                        <td>{{repo.description}}
+                        </td>
+                        <td class="WIP">
+                            WIP
+                        </td>
+                    </tr>
+                    
+                    {% endif %}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+
+                </tbody>
+            </table>
 
             <!--
             <h3>Wicket Viewer Components:</span></h3>
@@ -93,28 +122,7 @@ title: Home
             </ul>
             -->
 
-            <h3>Wicket Viewer Components: <span class="WIP">(WIP)</span></h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-wicket-' %}
-
-                {% if repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
-
-                {% assign repo_example = false %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
-                </li>
-                
-                {% endif %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-
             <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
-
 
         </div>
 
