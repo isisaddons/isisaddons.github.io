@@ -23,7 +23,7 @@ title: Home
                 {% unless repo.name contains 'XXX' %}
 
                 <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
                 </li>
 
                     
@@ -46,7 +46,7 @@ title: Home
 
                 
                 <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
                 </li>
 
                     
@@ -90,7 +90,7 @@ title: Home
                 {% assign repo_example = false %}
 
                 <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
                 </li>
                 
                 {% endif %}
@@ -150,7 +150,7 @@ title: Home
             <ul>
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == true %}
-                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
+                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li> ({{repo.description}})
                 {% endif %}
                 {% endfor %}
             </ul>
