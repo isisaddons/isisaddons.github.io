@@ -101,14 +101,6 @@ title: Home
 
             <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
 
-            <h3>Forked repos:</h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == true %}
-                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
 
         </div>
 
@@ -144,6 +136,22 @@ title: Home
                 And, if you think others would benefit from your changes, please consider raising a pull request
                 to fold those changes back into the original.
             </p>
+
+            <h3>Other Add-ons:</h3>
+            <p>
+                There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
+                the above package requirements, but which may nevertheless be of interest to developers building apps with
+                Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
+            </p>
+            
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == true %}
+                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
         </div>
 
 
