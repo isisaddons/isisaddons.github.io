@@ -100,28 +100,6 @@ title: Home
                 </tbody>
             </table>
 
-            <!--
-            <h3>Wicket Viewer Components:</span></h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-wicket-' %}
-
-                {% unless repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
-
-                {% assign repo_example = false %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a> ({{repo.description}})
-                </li>
-                
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-            -->
-
             <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
 
         </div>
@@ -145,14 +123,17 @@ title: Home
                 <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
             </ul>
             
-            <h3>Use "Out-of-the-box"</h3>
+            <h3>"Out-of-the-box" usage</h3>
             <p>
                 Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons) is released into 
                 <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no 
-                need to customize the functionality.
+                need to customize the functionality.  
+            </p>
+            <p>
+                The README contains details on the Maven dependency (or dependencies) to add.
             </p>
             
-            <h3>Forking the Repos</h3>
+            <h3>Extending the functionality (forking the add-on)</h3>
             <p>
                 Alternatively, if you do need to modify/adapt the provided functionality, then fork the entire repo.
                 This way you also have fixtures and tests to ensure that your changes are properly tested.
@@ -169,13 +150,30 @@ title: Home
                 Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
             </p>
             
-            <ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == true %}
-                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li> ({{repo.description}})
+
+                    <tr>
+                        <td>
+                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                        </td>
+                        <td>{{repo.description}}
+                        </td>
+                    </tr>
+                    
                 {% endif %}
                 {% endfor %}
-            </ul>
 
+                </tbody>
+            </table>
 
 
