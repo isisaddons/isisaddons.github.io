@@ -32,9 +32,10 @@ title: Home
 
                     <tr>
                         <td>
-                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                            <a href="{{repo.html_url}} target="_blank">{{ repo.name }}</a>
                         </td>
-                        <td>{{repo.description}}
+                        <td>
+                            {{repo.description}}
                         </td>
                         <td>
                             OK
@@ -57,9 +58,10 @@ title: Home
 
                     <tr>
                         <td>
-                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                            <a href="{{repo.html_url}} target="_blank">{{ repo.name }}</a>
                         </td>
-                        <td>{{repo.description}}
+                        <td>
+                            {{repo.description}}
                         </td>
                         <td class="WIP">
                             WIP
@@ -83,9 +85,10 @@ title: Home
 
                     <tr>
                         <td>
-                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                            <a href="{{repo.html_url}} target="_blank">{{ repo.name }}</a>
                         </td>
-                        <td>{{repo.description}}
+                        <td>
+                            {{repo.description}}
                         </td>
                         <td class="WIP">
                             WIP
@@ -104,7 +107,21 @@ title: Home
 
         </div>
 
-            <h3>Repo Structure</h3>
+            <h3>"Out-of-the-box"</h3>
+            <p>
+                All add-ons are released as a Maven artifact into the 
+                <a href="http://search.maven.org">Maven central repo</a>; just add the relevant dependencies to your 
+                project <code>pom.xml</code>, and (where required) register new domain services in Isis' 
+                <code>isis.properties</code> configuration files.  The README for each add-on contains full details 
+                on how to do this.
+            </p>
+            
+
+            <h3>Extending the functionality (forking the add-on)</h3>
+            <p>
+                Alternatively, if you do need to modify/adapt the provided functionality, then fork the entire repo.
+                This way you also have fixtures and tests to ensure that your changes are properly tested.
+            </p>
             <p>
                 The <code>isis-module-xxx</code> add-ons have the following structure:
             </p>
@@ -122,32 +139,22 @@ title: Home
                 <li><code>fixture</code> - fixtures</li>
                 <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
             </ul>
-            
-            <h3>"Out-of-the-box" usage</h3>
             <p>
-                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons) is released into 
-                <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no 
-                need to customize the functionality.  
-            </p>
-            <p>
-                The README contains details on the Maven dependency (or dependencies) to add.
-            </p>
-            
-            <h3>Extending the functionality (forking the add-on)</h3>
-            <p>
-                Alternatively, if you do need to modify/adapt the provided functionality, then fork the entire repo.
-                This way you also have fixtures and tests to ensure that your changes are properly tested.
-            </p>
-            <p>
-                And, if you think others would benefit from your changes, please consider raising a pull request
-                to fold those changes back into the original.
+                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons) are released 
+                the <a href="http://search.maven.org">Maven central repo</a>.
             </p>
 
-            <h3>Other Add-ons:</h3>
+            <h3>Contributing back</h3>
             <p>
-                There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
-                the above package requirements, but which may nevertheless be of interest to developers building apps with
-                Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
+                If you fork an add-on and think others would benefit from your changes, please raise a pull request so
+                that we can review and fold those changes back into the original.
+            </p>
+
+            <h3>Other Add-ons</h3>
+            <p>
+                There are also a number of other add-ons that either do not fit into the above categories, or which do 
+                not follow the repository structure, but which may nevertheless be of interest to developers building 
+                apps with Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
             </p>
             
             <table>
@@ -164,9 +171,10 @@ title: Home
 
                     <tr>
                         <td>
-                        <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                            <a href="{{repo.html_url}} target="_blank">{{ repo.name }}</a>
                         </td>
-                        <td>{{repo.description}}
+                        <td>
+                            {{repo.description}}
                         </td>
                     </tr>
                     
