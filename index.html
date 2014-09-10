@@ -3,64 +3,147 @@ layout: default
 title: Home
 ---
 
-<div class="home">
-<p>
-    This site catalogs a number of add-ons to <a href="http://isis.apache.org">Apache Isis</a> for you to use
-    either "out of the box", or as a starting point to modify and adapt
-    to your own requirements.  All add-ons live in the <code>org.isisaddons</code> package.
-</p>
 
-<p>Each add-on is hosted in its own github repo, named as follows:
-</p>
+        <div class="repos">
 
-<ul>
-    <li><code>isis-module-xxx</code> : a domain object &quot;module&quot; that implements business logic for a
-        particular subdomain, eg application settings, or tags (labels).</li>
-    </li>
-    <li><code>isis-wicket-yyy</code> : an extension to Isis' Wicket viewer, eg for rendering calendars or maps.</li>
-</ul>
-<p>
-    There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
-    the above package requirements, but which may nevertheless be of interest to developers building apps with
-    Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
-</p>
-<h3>Structure</h3>
-<p>
-    All repos follow a standard structure.  In the case of the <code>isis-module-xxx</code> add-ons, these have the 
-    following structure:
-</p>
-<ul>
-    <li><code>dom</code> - domain object module</li>
-    <li><code>fixture</code> - fixtures</li>
-    <li><code>integtests</code> - integration tests</li>
-    <li><code>webapp</code> - webapp to run</li>
-</ul>
-<p>
-    In the case of the <code>isis-wicket-xxx</code> add-ons, the structure is:
-</p>
-<ul>
-    <li><code>cpt</code> - component module</li>
-    <li><code>fixture</code> - fixtures</li>
-    <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
-</ul>
+            <p>
+                This site catalogs a number of add-ons to <a href="http://isis.apache.org">Apache Isis</a> for you to use
+                either "out of the box", or as a starting point to modify and adapt
+                to your own requirements.  Each add-on has its own repo.  All add-ons use the <code>org.isisaddons</code> package.
+            </p>
 
-<p>
-    Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons)is released into 
-    <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no need to customize the functionality.
-</p>
+            <h3>Domain Modules:</h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-module-' %}
+                
+                {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings'  %}
 
-<p>
-    If you do need to modify/adapt the provided functionality, then fork the entire repo; this
-    way you also have fixtures and tests to ensure that your changes are properly tested.
-    And, if you think others would benefit from your changes, please consider raising a pull request
-    to fold those changes back into the original.
-</p>
+                {% unless repo.name contains 'XXX' %}
+
+                <li>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                </li>
+
+                    
+                {% endunless %}
+                {% endunless %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+            <h3>Domain Modules: <span class="WIP">(WIP)</span></h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-module-' %}
+                
+                {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' %}
+                
+                {% unless repo.name contains 'XXX' %}
+
+                
+                <li>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                </li>
+
+                    
+                {% endunless %}
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+            <!--
+            <h3>Wicket Viewer Extensions:</span></h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-wicket-' %}
+
+                {% unless repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+
+                {% assign repo_example = false %}
+
+                <li>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                </li>
+                
+                {% endunless %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+            -->
+
+            <h3>Wicket Viewer Extensions: <span class="WIP">(WIP)</span></h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-wicket-' %}
+
+                {% if repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+
+                {% assign repo_example = false %}
+
+                <li>
+                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                </li>
+                
+                {% endif %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+            <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
+
+            <h3>Forked repos:</h3>
+            <ul>
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == true %}
+                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <div class="home">
+            <h3>Forking the Repos</h3>
+            <p>
+                All repos follow a standard structure.  In the case of the <code>isis-module-xxx</code> add-ons, these have the 
+                following structure:
+            </p>
+            <ul>
+                <li><code>dom</code> - domain object module</li>
+                <li><code>fixture</code> - fixtures</li>
+                <li><code>integtests</code> - integration tests</li>
+                <li><code>webapp</code> - webapp to run</li>
+            </ul>
+            <p>
+                In the case of the <code>isis-wicket-xxx</code> add-ons, the structure is:
+            </p>
+            <ul>
+                <li><code>cpt</code> - component module</li>
+                <li><code>fixture</code> - fixtures</li>
+                <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
+            </ul>
+
+            <p>
+                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons)is released into 
+                <a href="http://search.maven.org">Maven central repo</a>; this is all that is required if you have no need to customize the functionality.
+            </p>
+
+            <p>
+                If you do need to modify/adapt the provided functionality, then fork the entire repo; this
+                way you also have fixtures and tests to ensure that your changes are properly tested.
+                And, if you think others would benefit from your changes, please consider raising a pull request
+                to fold those changes back into the original.
+            </p>
+        </div>
 
 
-<h3>READMEs</h3>
-<p>
-    Each add-on has its own <code>README</code>; use that to learn more about the features provided by the add-on and how to
-    install/configure the add-on.  Some add-ons also have wiki pages (linked from the <code>README</code>).
-</p>
-
-</div>

@@ -11,107 +11,39 @@
         
         <p class="site-tagline"> {{ site.tagline }}</p>
 
-        <div class="repos">
+        
+        <div class="home">
 
-            <h3>Domain Modules:</h3>
+            <p>Each add-on is hosted in its own github repo:
+            </p>
             <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-module-' %}
-                
-                {% unless repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings'  %}
-
-                {% unless repo.name contains 'XXX' %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
+                <li><code>isis-module-xxx</code> : a domain object &quot;module&quot; that implements business logic for a
+                    particular subdomain, eg application settings, or tags (labels).</li>
                 </li>
-
-                    
-                {% endunless %}
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
+                <li><code>isis-wicket-yyy</code> : a component for Isis' Wicket viewer, eg for rendering calendars or maps.</li>
             </ul>
+            
+            <h3>READMEs</h3>
+            <p>
+                Each add-on has its own <code>README</code>; use that to learn more about the features provided by the add-on and how to
+                install/configure the add-on.  Some add-ons also have wiki pages (linked from the <code>README</code>).
+            </p>
 
-            <h3>Domain Modules: <span class="WIP">(WIP)</span></h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-module-' %}
-                
-                {% if repo.name contains 'devutils' or repo.name contains 'excel' or repo.name contains 'publishing' or repo.name contains 'scheduler' or repo.name contains 'settings' %}
-                
-                {% unless repo.name contains 'XXX' %}
+            <h3>Forking the Repos</h3>
+            <p>
+                All repos follow a standard structure, including a demo webapp and tests, to make them easy to fork and extend.
+            </p>
 
-                
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
-                </li>
+            <h3>Other Add-ons</h3>
+            <p>
+                There are also a number of other add-ons that either do not fit into the above categories, or which do not follow
+                the above package requirements, but which may nevertheless be of interest to developers building apps with
+                Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
+            </p>
 
-                    
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-
-            <!--
-            <h3>Wicket Viewer Extensions:</span></h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-wicket-' %}
-
-                {% unless repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
-
-                {% assign repo_example = false %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
-                </li>
-                
-                {% endunless %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-            -->
-
-            <h3>Wicket Viewer Extensions: <span class="WIP">(WIP)</span></h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == false %}
-                {% if repo.name contains '-wicket-' %}
-
-                {% if repo.name contains 'excel' or repo.name contains 'fulcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
-
-                {% assign repo_example = false %}
-
-                <li>
-                    <a href="{{repo.html_url}}">{{ repo.name }}</a>
-                </li>
-                
-                {% endif %}
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-            </ul>
-
-            <p class="WIP">'WIP' indicates the add-on is still work-in-progress and hasn't yet been released.</p>
-
-            <h3>Forked repos:</h3>
-            <ul>
-                {% for repo in site.github.public_repositories %}
-                {% if repo.fork == true %}
-                <li><a href="{{repo.html_url}}">{{ repo.name }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
 
         </div>
-
+        
+        
     </header>
 
