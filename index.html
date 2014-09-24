@@ -162,7 +162,7 @@ title: Home
                 <tbody>
 
                 {% for repo in site.github.public_repositories %}
-                {% if repo.fork == true %}
+                {% if repo.fork == true or  repo.name contains '-app-' or repo.name == 'template' %}
 
                     <tr>
                         <td>
