@@ -24,33 +24,14 @@ title: Home
                     {% for repo in site.github.public_repositories %}
                     {% if repo.fork == false %}
                     {% if repo.name contains '-module-' %}
-                    {% unless repo.name contains 'servletapi'  %}
 
                     <tr>
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-                    </tr>
-                    
-                    {% endunless %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-
-
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-module-' %}
-                    {% if repo.name contains 'servletapi' %}
-                    
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a> 
+                            {% if repo.name contains 'servletapi' %}
                             <br/>
                             <span class="WIP">WIP</span>
+                            {% endif %}
                         </td>
                         <td>
                             {{repo.description}}
@@ -58,47 +39,24 @@ title: Home
                     </tr>
                     
                     {% endif %}
-                    {% endif %}
-                    {% endif %}
                     {% endfor %}
-                    
+
+
 
 
                     {% for repo in site.github.public_repositories %}
                     {% if repo.fork == false %}
                     {% if repo.name contains '-wicket-' %}
-                    {% unless repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
 
                     {% assign repo_example = false %}
 
                     <tr>
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-
-                        </tr>
-                    
-                    {% endunless %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-
-
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-wicket-' %}
-                    {% if repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
-
-                    {% assign repo_example = false %}
-
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                            {% if repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
                             <br/>
                             <span class="WIP">WIP</span>
+                            {% endif %}
                         </td>
                         <td>
                             {{repo.description}}
@@ -108,8 +66,8 @@ title: Home
                     
                     {% endif %}
                     {% endif %}
-                    {% endif %}
                     {% endfor %}
+
 
                 </tbody>
             </table>
@@ -161,11 +119,9 @@ title: Home
                 that we can review and fold those changes back into the original.
             </p>
 
-            <h3>Other add-ons</h3>
+            <h3>Also of interest...</h3>
             <p>
-                There are also a number of other add-ons that either do not fit into the above categories, or which do 
-                not follow the repository structure, but which may nevertheless be of interest to developers building 
-                apps with Apache Isis.  The repos for these additional add-ons have been forked into this site for convenience.
+                There are also a number of other repos which may nevertheless be of interest to developers building apps with Apache Isis.
             </p>
             
             <table>
