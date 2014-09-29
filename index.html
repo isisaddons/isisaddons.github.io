@@ -24,10 +24,7 @@ title: Home
                     {% for repo in site.github.public_repositories %}
                     {% if repo.fork == false %}
                     {% if repo.name contains '-module-' %}
-                    
                     {% unless repo.name contains 'servletapi'  %}
-
-                    {% unless repo.name contains 'XXX' %}
 
                     <tr>
                         <td>
@@ -39,19 +36,16 @@ title: Home
                     </tr>
                     
                     {% endunless %}
-                    {% endunless %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}
 
+
                     {% for repo in site.github.public_repositories %}
                     {% if repo.fork == false %}
                     {% if repo.name contains '-module-' %}
-                    
                     {% if repo.name contains 'servletapi' %}
                     
-                    {% unless repo.name contains 'XXX' %}
-
                     <tr>
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a> 
@@ -63,18 +57,40 @@ title: Home
                         </td>
                     </tr>
                     
-                    {% endunless %}
                     {% endif %}
                     {% endif %}
                     {% endif %}
                     {% endfor %}
-
                     
+
+
                     {% for repo in site.github.public_repositories %}
                     {% if repo.fork == false %}
                     {% if repo.name contains '-wicket-' %}
+                    {% unless repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
 
-                    {% if repo.name contains 'excel' or repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
+                    {% assign repo_example = false %}
+
+                    <tr>
+                        <td>
+                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                        </td>
+                        <td>
+                            {{repo.description}}
+                        </td>
+
+                        </tr>
+                    
+                    {% endunless %}
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+
+
+                    {% for repo in site.github.public_repositories %}
+                    {% if repo.fork == false %}
+                    {% if repo.name contains '-wicket-' %}
+                    {% if repo.name contains 'fullcalendar2' or repo.name contains 'gmap3' or repo.name contains 'wickedcharts' or repo.name contains 'wizard' %}
 
                     {% assign repo_example = false %}
 
