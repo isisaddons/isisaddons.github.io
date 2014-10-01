@@ -28,10 +28,22 @@ title: Home
                     <tr>
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+
                             {% if repo.name contains 'servletapi' %}
-                            <br/>
-                            <span class="WIP">WIP</span>
+                                <br/>
+                                <span class="WIP">WIP</span>
                             {% endif %}
+
+                            {% if repo.name contains 'command' or repo.name contains 'audit' %}
+                                <br/>
+                                <a href="http://youtu.be/g01tK58MxJ8"><img src="./images/tv_show-25.png"></a>
+                            {% endif %}
+
+                            {% if repo.name contains 'security' %}
+                                <br/>
+				<a href="http://youtu.be/bj8735nBRR4"><img src="./images/tv_show-25.png"></a>
+                            {% endif %}
+
                         </td>
                         <td>
                             {{repo.description}}
