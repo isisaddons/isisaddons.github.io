@@ -29,7 +29,7 @@ title: Home
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
 
-                            {% if repo.name contains 'servletapi' %}
+                            {% if repo.name contains 'servletapi' or repo.name contains 'sessionlogger' %}
                                 <br/>
                                 <span class="WIP">WIP</span>
                             {% endif %}
