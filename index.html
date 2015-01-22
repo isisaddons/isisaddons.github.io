@@ -29,11 +29,6 @@ title: Home
                         <td>
                             <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
 
-                            <br/>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-
                             {% if repo.name contains 'servletapi' or repo.name contains 'sessionlogger' %}
                                 <br/>
                                 <span class="WIP">WIP</span>
@@ -52,6 +47,11 @@ title: Home
                         </td>
                         <td>
                             {{repo.description}}
+
+                            <br/>
+                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                            </a>
                         </td>
                     </tr>
                     
@@ -73,16 +73,16 @@ title: Home
                             {% if repo.name contains 'wizard' %}
 
                             <br/>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-
-                            <br/>
                             <span class="WIP">WIP</span>
                             {% endif %}
                         </td>
                         <td>
                             {{repo.description}}
+
+                            <br/>
+                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                            </a>
                         </td>
 
                         </tr>
