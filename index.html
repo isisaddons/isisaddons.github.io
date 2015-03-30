@@ -181,6 +181,7 @@ title: Home
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
+                        <th style="min-width:50px;">Build</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -194,6 +195,13 @@ title: Home
                         </td>
                         <td>
                             {{repo.description}}
+                        </td>
+                        <td>
+                            {% if repo.name contains 'jrebel' %}
+                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                            </a>
+                            {% endif %}
                         </td>
                     </tr>
                     
