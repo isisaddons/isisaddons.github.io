@@ -94,11 +94,48 @@ title: Home
                     {% endif %}
                     {% endfor %}
 
-                <tr>
-                    <th>Wicket UI</th>
-                    <th>Description</th>
-                    <th style="min-width:50px;">Build</th>
-                </tr>
+                    
+                    <tr>
+                        <th>MetaModel</th>
+                        <th>Description</th>
+                        <th style="min-width:50px;">Build</th>
+                    </tr>
+
+                    {% for repo in site.github.public_repositories %}
+                    {% if repo.fork == false %}
+                    {% if repo.name contains '-metamodel-' %}
+
+                    <tr>
+                        <td>
+                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                            {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
+                            <br/>
+                            <span class="WIP">WIP</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {{repo.description}}
+                        </td>
+                        <td>
+                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                            </a>
+                            <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
+                                <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
+                            </a>
+                        </td>
+                    </tr>
+
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+
+                    
+                    <tr>
+                        <th>Wicket UI</th>
+                        <th>Description</th>
+                        <th style="min-width:50px;">Build</th>
+                    </tr>
 
 
                     {% for repo in site.github.public_repositories %}
