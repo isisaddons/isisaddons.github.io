@@ -11,163 +11,166 @@ title: Home
                 to your own requirements.  Each add-on has its own repo.  All add-ons use the <code>org.isisaddons</code> package.
             </p>
             <table>
-                    <tr>
-                        <th>App</th>
-                        <th>Description</th>
-                        <th style="min-width:50px;">Build</th>
-                    </tr>
+                <tr>
+                    <th>App</th>
+                    <th>Description</th>
+                    <th style="min-width:50px;">Build</th>
+                </tr>
 
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-app-' %}
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-app-' %}
 
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                            {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
+                <tr>
+                    <td>
+                        <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                        {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
+                        <br/>
+                        <span class="WIP">WIP</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{repo.description}}
+                    </td>
+                    <td>
+                        <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                            <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                        </a>
+                        <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
+                            <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
+                        </a>
+                    </td>
+                </tr>
+
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
+
+                <tr>
+                    <th>Module</th>
+                    <th>Description</th>
+                    <th style="min-width:50px;">Build</th>
+                </tr>
+
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-module-' %}
+                {% unless repo.name contains 'module-event' or repo.name contains 'module-commchannel' %}
+
+
+                <tr>
+                    <td>
+                        <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                        {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
                             <br/>
                             <span class="WIP">WIP</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-                        <td>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-                            <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
-                                <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
-                            </a>
-                        </td>
-                    </tr>
+                        {% endif %}
 
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-
-
-                    <tr>
-                        <th>Module</th>
-                        <th>Description</th>
-                        <th style="min-width:50px;">Build</th>
-                    </tr>
-
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-module-' %}
-
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                            {% if repo.name contains 'event' or repo.name contains 'commchannel' %}
-                                <br/>
-                                <span class="WIP">WIP</span>
-                            {% endif %}
-
-                            {% if repo.name contains 'command' or repo.name contains 'audit' %}
-                                <br/>
-                                <a href="http://youtu.be/g01tK58MxJ8" target="_blank"><img src="./images/tv_show-25.png"></a>
-                            {% endif %}
-
-                            {% if repo.name contains 'security' %}
-                                <br/>
-                                <a href="http://youtu.be/bj8735nBRR4" target="_blank"><img src="./images/tv_show-25.png"></a>
-                            {% endif %}
-
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-                        <td>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-                            <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
-                                <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
-                            </a>
-                        </td>
-                    </tr>
-                    
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-
-                    
-                    <tr>
-                        <th>MetaModel</th>
-                        <th>Description</th>
-                        <th style="min-width:50px;">Build</th>
-                    </tr>
-
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-metamodel-' %}
-
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                            {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
+                        {% if repo.name contains 'command' or repo.name contains 'audit' %}
                             <br/>
-                            <span class="WIP">WIP</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-                        <td>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-                            <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
-                                <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
-                            </a>
-                        </td>
-                    </tr>
+                            <a href="http://youtu.be/g01tK58MxJ8" target="_blank"><img src="./images/tv_show-25.png"></a>
+                        {% endif %}
 
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-
-                    
-                    <tr>
-                        <th>Wicket UI</th>
-                        <th>Description</th>
-                        <th style="min-width:50px;">Build</th>
-                    </tr>
-
-
-                    {% for repo in site.github.public_repositories %}
-                    {% if repo.fork == false %}
-                    {% if repo.name contains '-wicket-' %}
-
-                    {% assign repo_example = false %}
-
-                    <tr>
-                        <td>
-                            <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                            {% if repo.name contains 'wizard' %}
-
+                        {% if repo.name contains 'security' %}
                             <br/>
-                            <span class="WIP">WIP</span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            {{repo.description}}
-                        </td>
-                        <td>
-                            <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
-                                <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
-                            </a>
-                            <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
-                                <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
-                            </a>
-                        </td>
-                    </tr>
-                    
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                            <a href="http://youtu.be/bj8735nBRR4" target="_blank"><img src="./images/tv_show-25.png"></a>
+                        {% endif %}
+
+                    </td>
+                    <td>
+                        {{repo.description}}
+                    </td>
+                    <td>
+                        <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                            <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                        </a>
+                        <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
+                            <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
+                        </a>
+                    </td>
+                </tr>
+                
+                {% endunless %}
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
+                
+                <tr>
+                    <th>MetaModel</th>
+                    <th>Description</th>
+                    <th style="min-width:50px;">Build</th>
+                </tr>
+
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-metamodel-' %}
+
+                <tr>
+                    <td>
+                        <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                        {% if repo.name contains 'xxx' or repo.name contains 'yyy' %}
+                        <br/>
+                        <span class="WIP">WIP</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{repo.description}}
+                    </td>
+                    <td>
+                        <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                            <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                        </a>
+                        <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
+                            <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
+                        </a>
+                    </td>
+                </tr>
+
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+
+                
+                <tr>
+                    <th>Wicket UI</th>
+                    <th>Description</th>
+                    <th style="min-width:50px;">Build</th>
+                </tr>
+
+
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-wicket-' %}
+
+                {% assign repo_example = false %}
+
+                <tr>
+                    <td>
+                        <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                        {% if repo.name contains 'wizard' %}
+
+                        <br/>
+                        <span class="WIP">WIP</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {{repo.description}}
+                    </td>
+                    <td>
+                        <a href="https://travis-ci.org/isisaddons/{{ repo.name }}" target="_blank">
+                            <img src="https://travis-ci.org/isisaddons/{{ repo.name }}.png?branch=master"></img>
+                        </a>
+                        <a href='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/'>
+                            <img src='https://estatio.ci.cloudbees.com/job/github=isisaddons={{ repo.name }}%20(master)/badge/icon'>
+                        </a>
+                    </td>
+                </tr>
+                
+                {% endif %}
+                {% endif %}
+                {% endfor %}
 
 
             </table>
@@ -180,8 +183,9 @@ title: Home
             <p>
                 All add-ons are released as a Maven artifact into the 
                 <a href="http://search.maven.org">Maven central repo</a>; just add the relevant dependencies to your 
-                project <code>pom.xml</code>, and (where required) register new domain services in Isis' 
-                <code>isis.properties</code> configuration files.  The README for each add-on contains full details 
+                project <code>pom.xml</code>, and (where required) register new domain services either using an
+                <code>AppManifest#getModules()</code> or in Isis' <code>isis.properties</code> configuration files.  
+                The README for each add-on contains full details 
                 on how to do this.
             </p>
             
@@ -195,23 +199,21 @@ title: Home
                 The <code>isis-app-xxx</code> and <code>isis-module-xxx</code> add-ons have the following structure:
             </p>
             <ul>
-                <li><code>dom</code> - domain object module</li>
-                <li><code>fixture</code> - fixtures</li>
-                <li><code>integtests</code> - integration tests</li>
-                <li><code>webapp</code> - webapp to run</li>
+                <li><code>app</code> - demo app's app manifest (nb: not every add-on has this)</li>
+                <li><code>dom</code> - domain object module (released to <a href="http://search.maven.org">Maven central</a>)</li>
+                <li><code>fixture</code> - demo app's fixtures</li>
+                <li><code>integtests</code> - demo app's integration tests</li>
+                <li><code>webapp</code> - demo app's webapp</li>
             </ul>
             <p>
                 The <code>isis-wicket-xxx</code> add-ons have the structure:
             </p>
             <ul>
-                <li><code>cpt</code> - component module</li>
-                <li><code>fixture</code> - fixtures</li>
-                <li><code>webapp</code> - webapp to run, and webapp (UI) tests</li>
+                <li><code>app</code> - demo app's app manifest (nb: not every add-on has this)</li>
+                <li><code>cpt</code> - component module (released to <a href="http://search.maven.org">Maven central</a>)</li>
+                <li><code>fixture</code> - demo app's fixtures</li>
+                <li><code>webapp</code> - demo app's webapp/UI tests</li>
             </ul>
-            <p>
-                Only the <code>dom</code> (for module add-ons) or <code>cpt</code> (for wicket add-ons) are released 
-                the <a href="http://search.maven.org">Maven central repo</a>.
-            </p>
 
             <h3>Contributing back</h3>
             <p>
