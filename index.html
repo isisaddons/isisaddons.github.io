@@ -20,6 +20,7 @@ title: Home
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-app-' %}
+                {% unless repo.name contains 'zzz-' %}
 
                 <tr>
                     <td>
@@ -44,6 +45,7 @@ title: Home
                     </td>
                 </tr>
 
+                {% endunless %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
@@ -58,7 +60,7 @@ title: Home
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' %}
-                {% unless repo.name contains 'module-event' or repo.name contains 'module-commchannel' %}
+                {% unless repo.name contains 'zzz-' %}
 
 
                 <tr>
@@ -110,6 +112,7 @@ title: Home
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-metamodel-' %}
+                {% unless repo.name contains 'zzz-' %}
 
                 <tr>
                     <td>
@@ -134,6 +137,7 @@ title: Home
                     </td>
                 </tr>
 
+                {% endunless %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
@@ -149,6 +153,7 @@ title: Home
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-wicket-' %}
+                {% unless repo.name contains 'zzz-' %}
 
                 {% assign repo_example = false %}
 
@@ -176,6 +181,7 @@ title: Home
                     </td>
                 </tr>
                 
+                {% endunless %}
                 {% endif %}
                 {% endif %}
                 {% endfor %}
