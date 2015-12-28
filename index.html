@@ -160,7 +160,7 @@ title: Home
                 <tr>
                     <td>
                         <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                        {% if repo.name contains 'wizard' %}
+                        {% if repo.name contains 'wizard' or repo.name contains 'summernote' %}
 
                         <br/>
                         <span class="WIP">WIP</span>
