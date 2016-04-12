@@ -189,6 +189,7 @@ title: Home
                 <tr>
                     <th>Obsolete</th>
                     <th>Description</th>
+                    <th style="min-width:50px;">&nbsp;</th>
                 </tr>
 
                 {% for repo in site.github.public_repositories %}
@@ -202,6 +203,9 @@ title: Home
                     </td>
                     <td>
                         {{repo.description}}
+                    </td>
+                    <td>
+                        &nbsp;
                     </td>
                 </tr>
                 
