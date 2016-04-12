@@ -60,7 +60,7 @@ title: Home
                 {% for repo in site.github.public_repositories %}
                 {% if repo.fork == false %}
                 {% if repo.name contains '-module-' %}
-                {% unless repo.name contains 'zzz-' %}
+                {% unless repo.name contains 'zzz-' or repo.name contains 'devutils' %}
 
 
                 <tr>
@@ -160,7 +160,7 @@ title: Home
                 <tr>
                     <td>
                         <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
-                        {% if repo.name contains 'wizard' or repo.name contains 'summernote' %}
+                        {% if repo.name contains 'wizard' %}
 
                         <br/>
                         <span class="WIP">WIP</span>
@@ -186,6 +186,30 @@ title: Home
                 {% endif %}
                 {% endfor %}
 
+                <tr>
+                    <th>Obsolete</th>
+                    <th>Description</th>
+                </tr>
+
+                {% for repo in site.github.public_repositories %}
+                {% if repo.fork == false %}
+                {% if repo.name contains '-module-devutils' %}
+
+
+                <tr>
+                    <td>
+                        <a href="{{repo.html_url}}" target="_blank">{{ repo.name }}</a>
+                    </td>
+                    <td>
+                        {{repo.description}}
+                    </td>
+                </tr>
+                
+                {% endunless %}
+                {% endif %}
+                {% endfor %}
+
+                
 
             </table>
 
